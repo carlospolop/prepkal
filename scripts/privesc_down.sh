@@ -104,6 +104,14 @@ windows_exe_seatbelt=(
 for u in "${windows_exe_seatbelt[@]}"; do direct_download $u $windows_seatbelt; done
 
 
+windows_bat_folder="$winDir/bat"
+mkdir $windows_bat_folder
+windows_bat=(
+    "https://raw.githubusercontent.com/carlospolop/winPE/master/winPE.bat"
+)
+for u in "${windows_bat[@]}"; do direct_download $u $windows_bat_folder; done
+
+
 windows_local_folder="$winDir/local"
 mkdir $windows_local_folder
 windows_local=(

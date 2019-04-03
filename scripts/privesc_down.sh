@@ -49,14 +49,18 @@ windows_ps_folder="$winDir/powershell"
 mkdir $windows_ps_folder
 windows_git_ps=(
     "https://github.com/PowerShellMafia/PowerSploit.git --branch dev"
-    "https://github.com/411Hall/JAWS.git"
-    "https://github.com/Arvanaghi/SessionGopher.git"
-    "https://github.com/peewpw/Invoke-WCMDump.git"
-    "https://github.com/dafthack/DomainPasswordSpray.git"
     "https://github.com/Kevin-Robertson/Inveigh.git"
-    "https://github.com/rasta-mouse/Sherlock.git"
 )
-for u in "${windows_git_ps[@]}"; do download_git $u $windows_ps_folder; done
+windows_ps=(
+    "https://raw.githubusercontent.com/enjoiz/Privesc/master/privesc.ps1"
+    "https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1"
+    "https://raw.githubusercontent.com/Arvanaghi/SessionGopher/master/SessionGopher.ps1"
+    "https://raw.githubusercontent.com/peewpw/Invoke-WCMDump/master/Invoke-WCMDump.ps1"
+    "https://raw.githubusercontent.com/dafthack/DomainPasswordSpray/master/DomainPasswordSpray.ps1"
+    "https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1"
+)
+for u in "${windows_git_ps[@]}"; do download_git "$u" $windows_ps_folder; done
+for u in "${windows_ps[@]}"; do direct_download "$u" $windows_ps_folder; done
 
 
 windows_exe_folder="$winDir/exe"
@@ -71,8 +75,8 @@ windows_exe=(
 windows_exe_git=(
     "https://github.com/ohpe/juicy-potato.git"
 )
-for u in "${windows_exe[@]}"; do direct_download $u $windows_exe_folder; done
-for u in "${windows_exe_git[@]}"; do download_git $u $windows_exe_folder; done
+for u in "${windows_exe[@]}"; do direct_download "$u" $windows_exe_folder; done
+for u in "${windows_exe_git[@]}"; do download_git "$u" $windows_exe_folder; done
 
 
 windows_watson="$windows_exe_folder/watson"
@@ -88,7 +92,7 @@ windows_exe_watson=(
     "https://github.com/carlospolop/winPE/raw/master/binaries/watson/WatsonNet4x64.exe"
     "https://github.com/carlospolop/winPE/raw/master/binaries/watson/WatsonNet4x86.exe"
 )
-for u in "${windows_exe_watson[@]}"; do direct_download $u $windows_watson; done
+for u in "${windows_exe_watson[@]}"; do direct_download "$u" $windows_watson; done
 
 
 windows_seatbelt="$windows_exe_folder/seatbelt"
@@ -101,15 +105,16 @@ windows_exe_seatbelt=(
     "https://github.com/carlospolop/winPE/raw/master/binaries/seatbelt/SeatbeltNet4x64.exe"
     "https://github.com/carlospolop/winPE/raw/master/binaries/seatbelt/SeatbeltNet4x86.exe"
 )
-for u in "${windows_exe_seatbelt[@]}"; do direct_download $u $windows_seatbelt; done
+for u in "${windows_exe_seatbelt[@]}"; do direct_download "$u" $windows_seatbelt; done
 
 
 windows_bat_folder="$winDir/bat"
 mkdir $windows_bat_folder
 windows_bat=(
     "https://raw.githubusercontent.com/carlospolop/winPE/master/winPE.bat"
+    "https://raw.githubusercontent.com/enjoiz/Privesc/master/privesc.bat"
 )
-for u in "${windows_bat[@]}"; do direct_download $u $windows_bat_folder; done
+for u in "${windows_bat[@]}"; do direct_download "$u" $windows_bat_folder; done
 
 
 windows_local_folder="$winDir/local"
@@ -118,7 +123,7 @@ windows_local=(
     "https://github.com/GDSSecurity/Windows-Exploit-Suggester.git"
     "https://github.com/bitsadmin/wesng.git"
 )
-for u in "${windows_local[@]}"; do download_git $u $windows_local_folder; done
+for u in "${windows_local[@]}"; do download_git "$u" $windows_local_folder; done
 
 
 pip install xlrd --upgrade #Needed for Windows-Exploit-Suggester

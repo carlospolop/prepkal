@@ -18,6 +18,8 @@ back_git_tools=(
     "https://github.com/Ne0nd0g/merlin.git"
     "https://github.com/Hackplayers/Salsa-tools.git"
     "https://github.com/inquisb/icmpsh"
+    "https://github.com/besimorhino/powercat.git"
+    "https://github.com/zerosum0x0/koadic.git"
 )
 back_tools=(
     "https://eternallybored.org/misc/netcat/netcat-win32-1.11.zip"

@@ -22,6 +22,7 @@ write_main "Starting download of Scripts for Linux/Unix Privesc"
 linux_privesc=(
     "https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh"
     "https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh"
+    "https://raw.githubusercontent.com/jondonas/linux-exploit-suggester-2/master/linux-exploit-suggester-2.pl"
     "http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz"
     "http://www.securitysift.com/download/linuxprivchecker.py"
     "https://github.com/AlessandroZ/BeRoot/archive/master.zip"

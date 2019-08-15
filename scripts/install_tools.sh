@@ -29,10 +29,6 @@ apt update && apt install code -y
 write_main "Installing terminator"
 apt install terminator -y
 
-write_main "Installing UDP-Proto-Scanner"
-git clone https://github.com/portcullislabs/udp-proto-scanner.git udp-proto-scanner
-cp udp-proto-scanner/udp-proto-scanner.pl udp-proto-scanner/udp-proto-scanner.conf /usr/local/bin
-
 write_main "Installing libreoffice"
 apt-get install libreoffice -y
 
@@ -44,13 +40,6 @@ apt-get install python-pyftpdlib -y
 
 write_main "Installing ptftpd"
 pip install ptftpd
-
-write_main "Installing snmp-mibs-downloader"
-apt-get install snmp-mibs-downloader -y
-sed -i 's/mibs :/#mibs :/g' /etc/snmp/snmp.conf
-
-write_main "Installing dirhunt"
-pip3 install dirhunt
 
 write_main "Installing peda"
 git clone https://github.com/longld/peda.git ~/peda
@@ -69,3 +58,42 @@ echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' >
 apt-get update
 apt-get remove docker docker-engine docker.io -y
 apt-get install docker-ce -y
+
+write_main "Installing oracle dependencies for patator"
+ip3 install cx_Oracle --upgrade
+
+write_main "Installing grc"
+apt-get install grc
+
+write_main "Installing rlwrap"
+apt-get isntall rlwrap
+
+#These are also the dependencies for Legion
+write_main "Installing odat"
+git clone https://github.com/quentinhardy/odat.git odat
+ln -s "$(pwd)/odat/odat.py" /usr/bin/odat.py
+
+write_main "Installing ikeforce"
+git clone https://github.com/SpiderLabs/ikeforce.git ikeforce
+ln -s "$(pwd)/ikeforce/ikeforce.py" /usr/bin/ikeforce
+pip2 install pyip pycrypto pyopenssl || pip install pyip pycrypto pyopenssl 
+
+write_main "Installing rpcbind"
+apt-get install rpcbind
+
+write_main "Installing UDP-Proto-Scanner"
+git clone https://github.com/portcullislabs/udp-proto-scanner.git udp-proto-scanner
+cp udp-proto-scanner/udp-proto-scanner.pl udp-proto-scanner/udp-proto-scanner.conf /usr/local/bin
+
+write_main "Installing snmp-mibs-downloader"
+apt-get install snmp-mibs-downloader -y
+sed -i 's/mibs :/#mibs :/g' /etc/snmp/snmp.conf
+
+write_main "Creating symlink of /usr/share/doc/python-impacket/examples/samrdump.py"
+ln -s /usr/share/doc/python-impacket/examples/samrdump.py /usr/bin/samrdump.py
+
+write_main "Creating symlink of /usr/share/doc/python-impacket/examples/rpcdump.py"
+ln -s /usr/share/doc/python-impacket/examples/rpcdump.py /usr/bin/rpcdump.py
+
+write_main "Installing dirhunt"
+pip3 install dirhunt

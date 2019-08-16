@@ -6,7 +6,7 @@ echo "ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBfXyAgICAgICAgICAgLl9fICAgCl9fX19fX1
 echo ""
 echo ""
 
-help="Prepare a new Kali VM with some missing tools\nValid options:\n\tall\t\t--\tInstall all\n\ttools\t\t--\tInstall main tools\n\tbackdoors\t--\tDownload some backdoors\n\tprivesc\t\t--\tDownload privesc tools\n\twordlists\t--\tDownload some wordlists\n\tforensic\t--\tDownload some forensics tools$0 all"
+help="Prepare a new Kali VM with some missing tools\nValid options:\n\tall\t\t--\tInstall all\n\ttools\t\t--\tInstall main tools\n\tbackdoors\t--\tDownload some backdoors\n\tprivesc\t\t--\tDownload privesc tools\n\twordlists\t--\tDownload some wordlists\n\tforensics\t--\tDownload some forensics tools\n\n$0 all"
 
 if [[ $EUID -ne 0 ]]; then
    echo -e "\e[31mThis script must be run as root\e[0m" 1>&2
@@ -49,7 +49,7 @@ elif [ $1 == "wordlists" ]; then
     write_super_main "Good choice. Starting installing only the wordlists tools..."
     scripts/wordlists_down.sh
 
-elif [ $1 == "forensic" ]; then
+elif [ $1 == "forensics" ]; then
     write_super_main "Good choice. Starting installing only the forensics tools..."
     scripts/forensic_down.sh
 

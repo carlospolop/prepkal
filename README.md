@@ -18,6 +18,8 @@ Valid options:
 	backdoors	--	Download some backdoors
 	privesc		--	Download privesc tools
 	wordlists	--	Download some wordlists
+	forensics	--	Download some forensics tools
+
 ./prepkal.sh all
 ```
 

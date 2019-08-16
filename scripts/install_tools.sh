@@ -60,15 +60,15 @@ apt-get remove docker docker-engine docker.io -y
 apt-get install docker-ce -y
 
 write_main "Installing oracle dependencies for patator"
-ip3 install cx_Oracle --upgrade
+pip3 install cx_Oracle --upgrade
 
 write_main "Installing grc"
-apt-get install grc
+apt-get install -y grc
 
 write_main "Installing rlwrap"
-apt-get isntall rlwrap
+apt-get install -y rlwrap
 
-#These are also the dependencies for Legion
+#Here are the dependencies for Legion
 write_main "Installing odat"
 git clone https://github.com/quentinhardy/odat.git odat
 ln -s "$(pwd)/odat/odat.py" /usr/bin/odat.py
@@ -79,7 +79,7 @@ ln -s "$(pwd)/ikeforce/ikeforce.py" /usr/bin/ikeforce
 pip2 install pyip pycrypto pyopenssl || pip install pyip pycrypto pyopenssl 
 
 write_main "Installing rpcbind"
-apt-get install rpcbind
+apt-get install -y rpcbind
 
 write_main "Installing UDP-Proto-Scanner"
 git clone https://github.com/portcullislabs/udp-proto-scanner.git udp-proto-scanner

@@ -29,5 +29,6 @@ Valid options:
 - Install backdoors (**backdoors**)
 - Install privesc tools (**privesc**)
 - Install wordlists (**wordlists**)
+- Install forensics tools (**forensics**)
 
 By Polop(TM)

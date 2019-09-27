@@ -35,6 +35,13 @@ apt-get install libreoffice -y
 write_main "Installing ftp"
 apt-get install ftp -y
 
+write_main "Installing mingw-w64"
+apt-get -y install mingw-w64
+
+write_main "Installing 7z2john.pl"
+wget https://raw.githubusercontent.com/magnumripper/JohnTheRipper/bleeding-jumbo/run/7z2john.pl -P /usr/bin
+chmod +x /usr/bin/7z2john.pl
+
 write_main "Installing pyftplib"
 apt-get install python-pyftpdlib -y
 
@@ -67,6 +74,12 @@ apt-get install -y grc
 
 write_main "Installing rlwrap"
 apt-get install -y rlwrap
+
+write_main "Installing gdbserver"
+apt-get install -y gdbserver
+
+write_main "Installing libcompress-raw for 7z2john-pl"
+apt-get install libcompress-raw-lzma-perl -y
 
 #Here are the dependencies for Legion
 write_main "Installing odat"

@@ -35,6 +35,9 @@ apt-get install libreoffice -y
 write_main "Installing ftp"
 apt-get install ftp -y
 
+write_main "Installing powershell"
+apt-get install -y powershell
+
 write_main "Installing mingw-w64"
 apt-get -y install mingw-w64
 

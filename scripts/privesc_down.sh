@@ -26,9 +26,9 @@ linux_privesc=(
     "http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz"
     "http://www.securitysift.com/download/linuxprivchecker.py"
     "https://github.com/AlessandroZ/BeRoot/archive/master.zip"
+    "https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh"
 )
 linux_git_prives=(
-    "https://github.com/carlospolop/linPE.git"
     "https://github.com/spencerdodd/kernelpop.git"
     "https://github.com/jondonas/linux-exploit-suggester-2.git"
 )
@@ -75,6 +75,7 @@ windows_exe=(
 )
 windows_exe_git=(
     "https://github.com/ohpe/juicy-potato.git"
+    "https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git"
 )
 for u in "${windows_exe[@]}"; do direct_download "$u" $windows_exe_folder; done
 for u in "${windows_exe_git[@]}"; do download_git "$u" $windows_exe_folder; done

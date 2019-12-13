@@ -97,6 +97,9 @@ pip2 install pyip pycrypto pyopenssl || pip install pyip pycrypto pyopenssl
 write_main "Installing rpcbind"
 apt-get install -y rpcbind
 
+write_main "Installing evil-winrm"
+gem install evil-winrm
+
 write_main "Installing UDP-Proto-Scanner"
 git clone https://github.com/portcullislabs/udp-proto-scanner.git udp-proto-scanner
 cp udp-proto-scanner/udp-proto-scanner.pl udp-proto-scanner/udp-proto-scanner.conf /usr/local/bin

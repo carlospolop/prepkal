@@ -61,6 +61,9 @@ systemctl enable postgresql
 write_main "Intalling mingw-w64"
 apt-get install mingw-w64 -y
 
+write_main "Intalling crackmapexec"
+apt-get install crackmapexec -y
+
 write_main "Installing Docker"
 #https://medium.com/@airman604/installing-docker-in-kali-linux-2017-1-fbaa4d1447fe
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -

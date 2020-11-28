@@ -51,9 +51,9 @@ apt-get install python-pyftpdlib -y
 write_main "Installing ptftpd"
 pip install ptftpd
 
-write_main "Installing peda"
-git clone https://github.com/longld/peda.git ~/peda
-echo "source ~/peda/peda.py" >> ~/.gdbinit
+#write_main "Installing peda"
+#git clone https://github.com/longld/peda.git ~/peda
+#echo "source ~/peda/peda.py" >> ~/.gdbinit
 
 write_main "Enabling postgresql"
 systemctl enable postgresql
